@@ -167,7 +167,7 @@ macro_rules! __entropy {
 ///
 /// This value is derived from the environment variable `OBFSTR_SEED` and has a fixed value if absent.
 /// If it changes all downstream dependents are recompiled automatically.
-pub const SEED: u64 = splitmix(hash(match option_env!("OBFSTR_SEED") { Some(seed) => seed, None => "FIXED" }) as u64);
+pub const SEED: u64 = splitmix(hash("FIXED") as u64);
 
 //----------------------------------------------------------------
 
